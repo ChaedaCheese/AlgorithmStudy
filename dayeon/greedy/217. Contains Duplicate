@@ -1,0 +1,9 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        for i in range(len(nums)):
+            for j in range(len(nums)-i-1):
+                if nums[i] == nums[min(j+i+1, (len(nums)-1))]:
+                    return True
+        return False
+
+        
